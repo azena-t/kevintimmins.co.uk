@@ -3,7 +3,13 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
+      <div className={"Site"}>
+        <header className={"Site-header"}>
+            <h1>Kevin Timmins</h1>
+        </header>
+
+      </div>
+    /*<div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -18,7 +24,7 @@ function App() {
           Learn React
         </a>
       </header>
-    </div>
+    </div>*/
   );
 }
 

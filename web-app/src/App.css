@@ -1,3 +1,18 @@
+.Site {
+  display: flex;
+  flex-direction: column;
+}
+
+.Site-header {
+  width: 100%;
+  background: #000000;
+  justify-content: center;
+  text-align: center;
+  color: #F0F0F0
+}
+
+
+
 .App {
   text-align: center;
 }
