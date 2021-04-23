@@ -22,7 +22,9 @@ export class CdkStack extends cdk.Stack {
     const domainName = "kevintimmins.co.uk";
     const siteSubDomain = "www"
 
-    const zone = HostedZone.fromLookup(this, 'Zone', { domainName: domainName });
+    const zone = HostedZone.fromHostedZoneAttributes(this, 'Zone', {hostedZoneId: 'Z034496529C3MBFLF7E6A', zoneName: 'kevintimmins.co.uk'})
+
+    // const zone = HostedZone.fromLookup(this, 'Zone', { domainName: domainName });
     const siteDomain = siteSubDomain + '.' + domainName;
     new cdk.CfnOutput(this, 'Site', { value: 'https://' + siteDomain });
 
@@ -55,6 +57,7 @@ export class CdkStack extends cdk.Stack {
     new ARecord(this, 'SiteAliasRecord', {
       recordName: siteDomain,
       target: RecordTarget.fromAlias(new CloudFrontTarget(distribution)),
+      ttl: Duration.seconds(60),
       zone
     });
 
